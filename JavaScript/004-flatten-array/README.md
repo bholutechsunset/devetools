@@ -1,0 +1,5 @@
+# flatten-array
+
+Problem
+
+Solution
