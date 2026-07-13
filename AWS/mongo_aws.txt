@@ -1,0 +1,39 @@
+setup mongodb on ec2
+1. Open 27017 port from security group
+2. Install and setup mongodb in ec2
+	sudo apt-get install gnupg curl
+
+	curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
+   --dearmor
+
+	echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+
+sudo systemctl start mongod
+
+Optional if fail previous command - sudo systemctl daemon-reload
+
+sudo systemctl status mongod
+
+ctrl+c
+
+Allow authrntication for mongodb
+sudo nano /etc/mongod.conf
+	security:
+		authorization: enabled
+
+sudo systemctl restart mongod
+sudo systemctl status mongod
+ctrl+c
+
+
+
+
+
+
+
+
