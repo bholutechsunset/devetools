@@ -1,0 +1,67 @@
+Deploy nodejs website on ec2
+1. Allow ports using security group
+2. setup vps using ec2
+3. Login ec2 from putty
+4. Perform cli
+	sudo apt update
+	sudo apt upgrade
+	sudo apt install nginx
+
+5. setup nodejs on ec2
+	find installation command here for nodejs - https://deb.nodesource.com/
+	upload source code via filezilla
+	
+6. Allow folder write delete permission
+	sudo chown ubuntu /path
+
+7. Setup reverse proxy - means domain or ip internally redirect your server localhost
+	edit nginx config file location
+	sudo nano  /etc/nginx/sites-available/default
+
+location / {
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+how to save edited
+1. ctrl+x
+2. y
+3. enter
+
+to start nginx
+sudo systemctl restart nginx
+sudo systemctl status nginx
+
+PM2 Command
+1. Installation
+	sudo npm i -g pm2
+
+2. How to compile
+	pm2 start index.js
+
+3. How to get server list with id
+	pm2 list
+
+4. How to stop server
+	pm2 stop 0
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
