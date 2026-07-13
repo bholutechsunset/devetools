@@ -1,0 +1,18 @@
+1. ports allow - 80(http), 443(https), 22(ssh) -> security group
+2. instance setup
+3. Login using putty
+	username - ubuntu
+
+4. Update dependency
+	sudo apt update
+
+5. Install nginx
+	sudo apt install nginx
+
+6. How to allow permission
+	sudo chown ubuntu /var/www/html
+
+7. Get free ssl
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d ersaurav.com -d www.ersaurav.com
+sudo certbot renew --dry-run
