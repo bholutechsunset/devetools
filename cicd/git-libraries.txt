@@ -1,0 +1,11 @@
+Checkout library
+actions/checkout@v2
+
+Docker library
+docker/setup-buildx-action@v1
+
+Docker login library
+docker/login-action@v1
+
+Ec2 Deployment library
+appleboy/ssh-action@master
