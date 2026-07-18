@@ -1,0 +1,25 @@
+Create image
+docker build -t image-name .
+
+Run image as container
+docker run -d --name dc-server -p 8080:8080 dc-image-2
+
+List all running containers
+docker ps
+
+List all stopped containers
+docker ps -a
+
+Stop running container
+docker stop container_id
+
+Start new container
+docker start container_id
+
+Re-Start new container
+docker restart container_id
+
+Check docker logs
+docker logs container_id
+
+

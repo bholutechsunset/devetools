@@ -1,2 +1,4 @@
 node_modules
 dist
+.env
+AWS/S3/.env
