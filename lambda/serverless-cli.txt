@@ -1,0 +1,3 @@
+npm i -g serverless
+npm i serverless-offline
+npm i aws-serverless-express
