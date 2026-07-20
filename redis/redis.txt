@@ -1,0 +1,37 @@
+Setup redis cli on docker
+docker pull redis
+
+Run redis as container
+docker run -d --name redis-server -p 6379:6379 redis
+
+Start redis cli
+docker exec -it redis-server redis-cli
+
+Single data management like variable
+SET key "value"
+GET key
+DEL key
+KEYS *
+EXPIRE key (time in second)
+
+Array in redis
+LPUSH key "value" "value" "value"
+RPUSH key "value" "value" "value" 
+LRANGE key start_index stop_index
+LPOP key
+RPOP key
+
+Set in redis for unique array
+SADD key "value" "value"
+SMEMBERS key
+
+ERASE whole redis storage
+FLUSHALL
+
+Objects in redis
+HSET object_name key "value" key "value"
+HGET object_name key
+HGETALL object_name
+
+
+

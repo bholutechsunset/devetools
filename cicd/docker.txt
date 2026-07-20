@@ -1,0 +1,25 @@
+install docker in ec2
+
+sudo apt install docker.io -y
+
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermode -aG docker ubuntu
+
+logout putty 
+logout 
+
+docker pull hello-word
+
+docker ps
+
+docker ps -a
+
+docker remove id
+
+sudo systemctl restart 
+
+logout 
+ 
+
+
